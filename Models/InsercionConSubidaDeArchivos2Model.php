@@ -6,6 +6,8 @@
         private $mysqli;
         private $data;
 
+        private $contenido;
+
         public function __construct()
         {
             $this->mysqli=Connection::conn1();
@@ -101,7 +103,39 @@
             else
             {
                 $result = "Operación realizada con éxito. ";
+   
             }
+
+                $id_artista = $stmt->insert_id;
+                echo "Prueba: ".$id_artista;
+
+                setDataPreparedStatements3($contenido, $id_artista);
+            
+            $this->mysqli->close();
+            return $result;
+            
+        }
+
+        public function setDataPreparedStatements3($sql, $contenido, $artista)
+        {
+            $stmt = $this->mysqli->prepare($sql, $contenido, $artista);
+            $stmt->bind_param("ii", $contenido, $artista); // i int, d float, s string, b blob
+
+            if(!$stmt->execute())
+            {
+                $result = "La operación no se ha podido realizar. ";
+                // echo "Detalle del error en la consulta (setDataPreparedStatements1) - ";
+                // echo "Numero del error: " . $this->mysqli->errno . " - ";
+                // echo "Descripcion del error: " . $this->mysqli->error;                
+            }
+            else
+            {
+                $result = "Operación realizada con éxito. ";
+   
+            }
+
+                $ultimo_id_insertado = $stmt->insert_id;
+                echo "Prueba: ".$ultimo_id_insertado;
             
             $this->mysqli->close();
             return $result;
