@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php require_once "Views/Shared/Menu1View.php"; ?>
-    <?php require_once "Views/InsercionConDeclaracionesPreparadas/InsercionConDeclaracionesPreparadas1View.php"; ?>
+    <?php require_once "Views/InsercionConDeclaracionesPreparadas/InsercionConDeclaracionesPreparadas2View.php"; ?>
     <?php require_once "Views/Shared/Footer1View.php"; ?>
 </body>
 </html>

@@ -243,6 +243,26 @@ window.addEventListener('load', function(){
       insertarDatos1(formInsercion3,boton1,controlador1,div1);
     });
   }
+
+
+  // Paso 1: Obtener referencias:
+  const formInsercion4 = document.getElementById("formInsercion4");
+  // Paso 2 - Asociación del elemento al evento (submit) y llamada a la función
+  if(formInsercion4)
+  {
+    // Referencia de los elementos
+    boton1 = document.getElementById("botonInsercion4");
+    controlador1 = "Controllers/InsercionDeclaracionesPreparadas2Controller.php";
+    div1 = document.getElementById("contenedor2");
+    // Evento y llamada a la función
+    formInsercion4.addEventListener("submit", function(event){
+      event.preventDefault();
+      insertarDatos1(formInsercion4,boton1,controlador1,div1);
+    });
+  }
+
+
+
   /* ---------------------------------- FIN - (submit) Insertar 3 */
 
   /* ---------------------------------- INICIO - (submit) Insertar y subir archivos 1 */
