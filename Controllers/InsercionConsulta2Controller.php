@@ -10,10 +10,8 @@
 
     // Llamada al método
     $sql = "select tit_con, img_con, vid_con from contenidos";
-    $data = $oData->getDataPreparedStatements1($sql);
+    $data = $oData->getData1($sql);
 
-
-    /*
     if(empty($data))
     {
         echo
@@ -48,7 +46,5 @@
             ";
         }
     }
-
-    */
 
 ?>

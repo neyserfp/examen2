@@ -8,6 +8,6 @@
         </form>
     </div>
     <div id="contenedor2" class="contenedor2"> 
-        <?php require_once "Controllers/InsercionConsulta1Controller.php"; ?>
+        <?php require_once "Controllers/InsercionConsulta2Controller.php"; ?>
     </div>
 </div>
