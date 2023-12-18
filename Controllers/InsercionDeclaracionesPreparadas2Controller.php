@@ -18,6 +18,8 @@
     $oData1 = new Datos;
     $oData2 = new Datos;
     $oData3 = new Datos;
+    $oData4 = new Datos;
+    $oData5 = new Datos;
 
     // Llamada al metodo para subir el archivo (uploadFile)
 
@@ -49,9 +51,16 @@
     $sql3 = "insert into artistas (non_art) values (?)";
     $data3 = $oData3->setDataPreparedStatements2($sql3, $textoInsercion3);
 
+    $sql4 = "insert into artistas_contenidos (ide_con, ide_art) values (?, ?)";
+    $data4 = $oData4->setDataPreparedStatements3($sql4, $data1, $data2);
 
-    
-    //echo $data;
+    $sql5 = "insert into artistas_contenidos (ide_con, ide_art) values (?, ?)";
+    $data5 = $oData5->setDataPreparedStatements3($sql5, $data1, $data3);
+
+
+    echo "Contenido: |".$data1."|";
+    echo "Artista 1: |".$data2."|";
+    echo "Artista 2: |".$data3."|";
 
     // Documentación en:
     // https://www.php.net/manual/en/mysqli.quickstart.prepared-statements.php#mysqli.quickstart.prepared-statements
